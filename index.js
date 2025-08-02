@@ -24,7 +24,13 @@ const analyticsRoutes = require("./routes/analytics");
 
 
 //Middleware
-app.use(cors());
+const corsOptions = {
+  origin: process.env.FRONTEND_URL,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+};
+app.use(cors(corsOptions));
+
 app.use(express.json()); //To parse JSON requests
 
 //Routes
