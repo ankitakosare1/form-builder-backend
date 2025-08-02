@@ -15,9 +15,9 @@ MONGO_URI=mongodb+srv://ankitakosare1:d4xQtnNSUET9rl0K@cluster0.8eatefo.mongodb.
 JWT_SECRET=SECRET
 EMAIL_USER=dev.still.working@gmail.com
 EMAIL_PASS=cznwjbukpijyebhy
-FRONTEND_URL=http://localhost:3000
+FRONTEND_URL=https://form-builder-frontend.netlify.app/
 
-Run Locally: npm start
+Run: npm start
 
 Features Implemented:
 User Authentication (JWT-based login/signup)
