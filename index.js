@@ -6,6 +6,7 @@ const connectDB = require("./config/database");
 const app = express();
 
 dotenv.config();
+console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
 
 //DB Connection
 connectDB();
@@ -42,13 +43,13 @@ app.get("/", (req, res) => {
 });
 
 //Routes
-app.use("/api/user", userRoutes);
-app.use("/api/otp", otpRoutes);
-app.use("/api/project", projectRoutes);
-app.use("/api/form", formRoutes);
-app.use("/api/response", responseRoutes);
-app.use("/api/works", workRoutes);
-app.use("/api/analytics", analyticsRoutes);
+// app.use("/api/user", userRoutes);
+// app.use("/api/otp", otpRoutes);
+// app.use("/api/project", projectRoutes);
+// app.use("/api/form", formRoutes);
+// app.use("/api/response", responseRoutes);
+// app.use("/api/works", workRoutes);
+// app.use("/api/analytics", analyticsRoutes);
 
 //Start the Server
 app.listen(port, () => {
