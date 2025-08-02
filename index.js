@@ -14,6 +14,11 @@ connectDB();
 //Port
 const port = process.env.PORT || 4000
 
+//Middleware
+app.use(cors());
+app.use(express.json()); //To parse JSON requests
+
+
 //Require Routes
 const userRoutes = require("./routes/userRoutes")
 const otpRoutes = require("./routes/otpRoutes");
@@ -22,20 +27,6 @@ const formRoutes = require("./routes/formRoutes");
 const responseRoutes = require("./routes/responseRoutes");
 const workRoutes = require("./routes/workRoutes");
 const analyticsRoutes = require("./routes/analytics");
-
-
-//Middleware
-const corsOptions = {
-  origin: process.env.FRONTEND_URL,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization']
-};
-
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
-
-app.use(express.json()); //To parse JSON requests
 
 // Debug route (for testing backend)
 app.get("/", (req, res) => {
