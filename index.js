@@ -36,6 +36,11 @@ app.options('*', cors(corsOptions));
 
 app.use(express.json()); //To parse JSON requests
 
+// Debug route (for testing backend)
+app.get("/", (req, res) => {
+  res.send("Backend is running successfully!");
+});
+
 //Routes
 app.use("/api/user", userRoutes);
 app.use("/api/otp", otpRoutes);
